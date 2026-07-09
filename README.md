@@ -31,6 +31,19 @@ Then visit `http://localhost:5174`.
 
 The template is self-contained for static hosting. The logo lives at `assets/halosight-color-logo.png`.
 
+## Editing The Template
+
+The page includes a lightweight browser-based editor:
+
+- Click **Edit** in the bottom-right toolbar.
+- Click any outlined text field and type directly on the page.
+- Click the header logo or the hero image field to replace an image.
+- Click **Save** to store edits in the current browser with `localStorage`.
+- Click **Export HTML** to download a standalone edited HTML file.
+- Click **Reset** to clear local saved edits and return to the committed template.
+
+This editor is meant for fast website-copy and layout review, similar to editing slide fields. It does not publish changes back to GitHub automatically.
+
 ## Deploy With GitHub Pages
 
 Option A: deploy this folder from the `main` branch.
