@@ -1230,9 +1230,9 @@ textarea {
   position: relative;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.03rem;
+  font-size: clamp(1.18rem, 1.45vw, 1.42rem);
   font-weight: 600;
-  line-height: 1.58;
+  line-height: 1.48;
 }
 
 .roi-section {
