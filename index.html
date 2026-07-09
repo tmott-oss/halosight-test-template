@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halosight Test Website Template</title>
+    <meta
+      name="description"
+      content="Prototype template for Halosight, an AI meeting intelligence and CRM automation platform for account teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Halosight home">
+        <img src="./assets/halosight-color-logo.png" alt="Halosight" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="#problem">The Problem</a>
+        <a href="#workflow">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#resources">Resources</a>
+        <button class="button button-coral button-small" type="button" data-open-modal>See It in Action</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-dark">
+        <div class="hero-content">
+          <p class="section-label">AI for account management</p>
+          <h1>Smarter meetings. Anywhere. Synced with your CRM.</h1>
+          <p class="hero-copy">
+            Halosight helps customer-facing teams capture live interactions, extract commitments, and update CRM records without the after-meeting admin drag.
+          </p>
+          <div class="button-row">
+            <button class="button button-coral" type="button" data-open-modal>See It in Action</button>
+            <a class="button button-purple" href="#workflow">Steal our Strategies</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Meeting capture and CRM sync preview">
+          <div class="sync-card">
+            <span class="status-dot"></span>
+            <p>AI generating</p>
+            <strong>CRM Summary</strong>
+            <small>Risk, next step, and opportunity fields ready</small>
+          </div>
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <p class="recording"><span></span> Listening</p>
+            <strong>24:18</strong>
+            <div class="waveform" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="detected">
+              <p>Detected</p>
+              <ul>
+                <li>Pricing risk</li>
+                <li>Decision maker</li>
+                <li>Follow-up task</li>
+              </ul>
+            </div>
+            <button class="record-button" type="button" aria-label="Stop recording"></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" class="section section-light problem-section">
+        <div class="section-heading centered">
+          <p class="section-label">The problem</p>
+          <h2>Lost context. Missed commitments. An empty CRM.</h2>
+          <p>A field rep finishes a strong meeting, then the details fade before the CRM catches up.</p>
+        </div>
+        <div class="problem-grid">
+          <article>
+            <span class="icon-tile">01</span>
+            <h3>Context Bleed Out</h3>
+            <p>Customer nuance disappears between the parking lot, the next drive, and the end-of-day update.</p>
+          </article>
+          <article>
+            <span class="icon-tile">02</span>
+            <h3>The Admin Tax</h3>
+            <p>Account teams spend hours reconstructing conversations instead of moving accounts forward.</p>
+          </article>
+          <article>
+            <span class="icon-tile">03</span>
+            <h3>The Incomplete Picture</h3>
+            <p>Half-filled CRM fields make follow-up slow, forecasting muddy, and handoffs fragile.</p>
+          </article>
+        </div>
+        <aside class="callout">
+          <strong>Template note:</strong>
+          Replace this callout with a sharper market insight, customer quote, or before-and-after metric during testing.
+        </aside>
+      </section>
+
+      <section id="workflow" class="section section-dark workflow-section">
+        <div class="section-heading centered">
+          <h2>How It Actually Works</h2>
+          <p>Four steps. Zero excuses. Maximum account context.</p>
+        </div>
+        <div class="workflow-layout">
+          <div class="steps" data-steps>
+            <button class="step is-active" type="button" data-step="capture">
+              <span>1</span>
+              <strong>Capture Customer Interactions</strong>
+              <small>Record in-person or remote meetings with active listening.</small>
+            </button>
+            <button class="step" type="button" data-step="extract">
+              <span>2</span>
+              <strong>We Do The Heavy Lifting</strong>
+              <small>AI finds commitments, objections, contacts, risks, and next actions.</small>
+            </button>
+            <button class="step" type="button" data-step="sync">
+              <span>3</span>
+              <strong>CRM Gets Updated</strong>
+              <small>Summaries and fields are drafted for Salesforce, HubSpot, or your workflow.</small>
+            </button>
+            <button class="step" type="button" data-step="act">
+              <span>4</span>
+              <strong>You Look Like A Genius</strong>
+              <small>Follow-ups happen with context, consistency, and timing.</small>
+            </button>
+          </div>
+          <div class="workflow-preview" data-step-preview>
+            <div class="preview-orbit">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>Capture Customer Interactions</h3>
+            <p>Your rep opens the app, hits record, and focuses on the conversation instead of the keyboard.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section section-light">
+        <div class="section-heading centered">
+          <p class="section-label">Features</p>
+          <h2>Smarter meetings. Happier customers.</h2>
+          <p>Build the test website around the account-management story, not generic call recording.</p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-icon">N</span>
+            <h3>Intelligent Meeting Notes</h3>
+            <p>Automatically organizes transcripts, summaries, action items, and decisions.</p>
+            <a href="#contact">Key points become pipeline-ready records</a>
+          </article>
+          <article>
+            <span class="feature-icon">R</span>
+            <h3>Narrative Intelligence</h3>
+            <p>Names, titles, roles, and deal-shaping comments are pulled from the conversation.</p>
+            <a href="#contact">Remember who matters and why</a>
+          </article>
+          <article>
+            <span class="feature-icon">O</span>
+            <h3>Opportunity Detection</h3>
+            <p>Buying signals, expansion moments, and risk markers surface while they are still fresh.</p>
+            <a href="#contact">Never miss an upsell or save point</a>
+          </article>
+          <article>
+            <span class="feature-icon">C</span>
+            <h3>Context Awareness</h3>
+            <p>Account data, product names, promotions, and playbooks can shape summaries and next steps.</p>
+            <a href="#contact">Give reps better memory in the field</a>
+          </article>
+          <article>
+            <span class="feature-icon">F</span>
+            <h3>Follow-Up Automation</h3>
+            <p>Draft tasks and reminders from customer commitments before the account goes cold.</p>
+            <a href="#contact">Turn “we will” into “done”</a>
+          </article>
+          <article>
+            <span class="feature-icon">P</span>
+            <h3>Pipeline Intelligence</h3>
+            <p>Translate meeting reality into account health, sentiment, and opportunity movement.</p>
+            <a href="#contact">Know which deals are real</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="integration-band section-dark">
+        <div class="section-heading centered">
+          <h2>Plays Nice With Your Stack</h2>
+          <p>An AI agent is only as smart as what it connects to.</p>
+        </div>
+        <div class="stack-map" aria-label="Integration map">
+          <div class="stack-node center-node">Halosight<br /><small>Active Listening</small></div>
+          <div class="stack-node node-a">Salesforce</div>
+          <div class="stack-node node-b">HubSpot</div>
+          <div class="stack-node node-c">Slack</div>
+          <div class="stack-node node-d">Microsoft 365</div>
+          <div class="stack-node node-e">Google Drive</div>
+        </div>
+        <p class="small-centered">Use this module to test integration messaging, partner logos, or workflow diagrams.</p>
+      </section>
+
+      <section id="pricing" class="section section-light pricing-section">
+        <div class="section-heading centered">
+          <p class="section-label">Pricing</p>
+          <h2>Start with the workflow. Scale with the team.</h2>
+          <p>These cards are intentionally editable placeholders for testing package names and conversion paths.</p>
+        </div>
+        <div class="pricing-grid">
+          <article>
+            <h3>Starter</h3>
+            <p class="price">Demo-led</p>
+            <ul>
+              <li>Meeting capture</li>
+              <li>AI summaries</li>
+              <li>Basic CRM export</li>
+            </ul>
+            <button class="button button-outline" type="button" data-open-modal>Get a Demo</button>
+          </article>
+          <article class="featured-plan">
+            <p class="plan-label">Most likely test winner</p>
+            <h3>Growth</h3>
+            <p class="price">Contact sales</p>
+            <ul>
+              <li>Commitment ledger</li>
+              <li>CRM auto-sync</li>
+              <li>Team-level account intelligence</li>
+            </ul>
+            <button class="button button-coral" type="button" data-open-modal>Talk to Sales</button>
+          </article>
+          <article>
+            <h3>Scale</h3>
+            <p class="price">Custom</p>
+            <ul>
+              <li>Custom workflows</li>
+              <li>Advanced integrations</li>
+              <li>Security and compliance support</li>
+            </ul>
+            <button class="button button-outline" type="button" data-open-modal>Build a Plan</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dark metrics-section">
+        <div class="section-heading centered">
+          <h2>Ready To Stop Losing Deals To Bad Data?</h2>
+          <p>Your competition is probably still using spreadsheets. Be better than that.</p>
+          <div class="button-row centered-row">
+            <button class="button button-coral" type="button" data-open-modal>See It in Action</button>
+            <a class="button button-purple" href="#resources">Read the Playbook</a>
+          </div>
+        </div>
+        <div class="metric-row">
+          <div><strong>95%+</strong><span>Transcription accuracy</span></div>
+          <div><strong>6 hrs/week</strong><span>Saved per rep</span></div>
+          <div><strong>7 minutes</strong><span>Setup time</span></div>
+        </div>
+      </section>
+
+      <section id="resources" class="section section-light resources-section">
+        <div class="section-heading">
+          <p class="section-label">Resources</p>
+          <h2>Test content lanes without rebuilding the page.</h2>
+          <p>Swap these cards for blog posts, documentation, security proof, newsletter signup, or case studies.</p>
+        </div>
+        <div class="resource-layout">
+          <article class="resource-card">
+            <h3>AI-readable context</h3>
+            <p>Keep `/llms.txt`, `/ai-context.json`, and structured metadata current as the site evolves.</p>
+            <a href="https://halosight.com/llms.txt">View current llms.txt</a>
+          </article>
+          <article class="resource-card">
+            <h3>Security and trust</h3>
+            <p>Use a simple trust page for encryption, access controls, SOC 2 progress, and customer data handling.</p>
+            <a href="https://halosight.com/security">Review current security page</a>
+          </article>
+          <article class="newsletter-card">
+            <h3>Get the field sales playbook</h3>
+            <form data-newsletter-form>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@company.com" required />
+              </label>
+              <button class="button button-purple" type="submit">Subscribe</button>
+              <p class="form-note" data-newsletter-status>No spam. Just practical account-team workflow ideas.</p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="footer-brand" href="#top">Halosight</a>
+        <p>Turning field conversations into CRM gold since 2024.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <a href="#features">Features</a>
+        <a href="#workflow">How it works</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <a href="https://halosight.com/about">About</a>
+        <a href="https://halosight.com/blog">Blog</a>
+        <a href="https://halosight.com/contact">Contact</a>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <a href="mailto:sales@halosight.com">sales@halosight.com</a>
+        <a href="tel:+18018743335">(801) 874-3335</a>
+        <p>Midvale, UT</p>
+      </div>
+    </footer>
+
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden data-modal>
+      <div class="modal-scrim" data-close-modal></div>
+      <div class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close" data-close-modal>&times;</button>
+        <p class="section-label">Demo request</p>
+        <h2 id="modal-title">See Halosight In Action</h2>
+        <p>Use this test form to validate messaging, conversion paths, and CRM handoff behavior before wiring a production form.</p>
+        <form class="contact-form" data-contact-form>
+          <label>
+            <span>Full name</span>
+            <input name="name" type="text" placeholder="Jordan Lee" required />
+          </label>
+          <label>
+            <span>Work email</span>
+            <input name="email" type="email" placeholder="jordan@company.com" required />
+          </label>
+          <label>
+            <span>Company</span>
+            <input name="company" type="text" placeholder="Acme Logistics" required />
+          </label>
+          <label>
+            <span>What should we focus on?</span>
+            <textarea name="message" rows="4" placeholder="CRM sync, field meetings, account planning..."></textarea>
+          </label>
+          <button class="button button-coral" type="submit">Send Test Request</button>
+          <p class="form-note" data-contact-status>This form is local-only in the template.</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
