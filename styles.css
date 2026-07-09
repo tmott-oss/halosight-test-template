@@ -216,6 +216,7 @@ textarea {
 }
 
 .section {
+  position: relative;
   padding: clamp(72px, 9vw, 124px) clamp(18px, 4vw, 64px);
 }
 
@@ -272,6 +273,7 @@ textarea {
 }
 
 .hero {
+  position: relative;
   min-height: 820px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
@@ -434,6 +436,110 @@ textarea {
 .editor-active .image-field-button {
   display: inline-flex;
   align-items: center;
+}
+
+.custom-layer-item {
+  position: absolute;
+  z-index: 8;
+  box-sizing: border-box;
+  border: 1px solid rgba(139, 146, 255, 0.24);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 18px 44px rgba(10, 12, 20, 0.2);
+}
+
+.editor-active .custom-layer-item.is-selected {
+  outline: 2px solid var(--brand-coral);
+  outline-offset: 3px;
+}
+
+.custom-drag-handle {
+  position: absolute;
+  left: 8px;
+  top: -34px;
+  display: none;
+  align-items: center;
+  min-height: 26px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--white);
+  background: rgba(16, 21, 33, 0.94);
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: grab;
+  box-shadow: 0 8px 22px rgba(10, 12, 20, 0.22);
+}
+
+.custom-drag-handle:active {
+  cursor: grabbing;
+}
+
+.editor-active .custom-drag-handle {
+  display: inline-flex;
+}
+
+.custom-text-box {
+  min-width: 180px;
+  max-width: min(520px, 80vw);
+  min-height: 72px;
+  padding: 18px 20px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(139, 146, 255, 0.38);
+  resize: both;
+  overflow: auto;
+}
+
+.custom-text-box[data-theme="dark"] {
+  color: var(--white);
+  background: rgba(26, 29, 41, 0.9);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.custom-text-content {
+  min-height: 36px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.35;
+  outline: 0;
+}
+
+.custom-image-box {
+  width: min(360px, 70vw);
+  min-height: 210px;
+  margin: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(139, 146, 255, 0.14), rgba(107, 157, 176, 0.14)),
+    rgba(255, 255, 255, 0.88);
+  border: 2px dashed rgba(139, 146, 255, 0.5);
+  resize: both;
+}
+
+.custom-image-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  object-fit: cover;
+}
+
+.custom-image-box:not(.has-image) img {
+  display: none;
+}
+
+.custom-image-box figcaption {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  color: var(--neutral-600);
+  text-align: center;
+  font-weight: 800;
+}
+
+.custom-image-box.has-image figcaption {
+  display: none;
 }
 
 .editor-active img[data-edit-image] {
@@ -822,6 +928,7 @@ textarea {
 }
 
 .integration-band {
+  position: relative;
   margin: 0 clamp(18px, 4vw, 64px);
   border-radius: var(--radius-md);
   padding: clamp(72px, 8vw, 116px) 20px;
@@ -950,6 +1057,52 @@ textarea {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.roi-section {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(107, 157, 176, 0.12), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.roi-grid article {
+  min-height: 220px;
+  padding: 30px;
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+}
+
+.roi-grid strong {
+  display: block;
+  color: var(--brand-blue);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1;
+}
+
+.roi-grid h3 {
+  margin: 22px 0 10px;
+  color: var(--dark-primary);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.roi-grid p {
+  margin: 0;
+  color: var(--neutral-600);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
 .metrics-section {
   text-align: center;
 }
@@ -1036,6 +1189,7 @@ textarea:focus {
 }
 
 .site-footer {
+  position: relative;
   display: grid;
   grid-template-columns: 1.6fr repeat(3, 1fr);
   gap: 32px;
@@ -1172,7 +1326,8 @@ textarea:focus {
 
   .problem-grid,
   .feature-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .roi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1195,6 +1350,7 @@ textarea:focus {
   .problem-grid,
   .feature-grid,
   .pricing-grid,
+  .roi-grid,
   .site-footer {
     grid-template-columns: 1fr;
   }

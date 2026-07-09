@@ -10,6 +10,7 @@ This is a static prototype built from the public Halosight website scrape and th
 - `https://halosight.com/llms.txt`
 - `https://halosight.com/ai-context.json`
 - Production CSS bundle tokens from `https://halosight.com/assets/index-DfzKn3g7.css`
+- Slide 7 from `/Users/troymott/Downloads/2026 07 10 - Halosight Introduction - Trudell (1).pptx`
 
 ## What This Template Preserves
 
@@ -38,6 +39,9 @@ The page includes a lightweight browser-based editor:
 - Click **Edit** in the bottom-right toolbar.
 - Click any outlined text field and type directly on the page.
 - Click the header logo or the hero image field to replace an image.
+- Click **Add Text Box** to place a draggable text box in the currently visible section.
+- Click **Add Image** to place a draggable image field in the currently visible section.
+- Drag added objects by their **Move** handle while edit mode is on.
 - Click **Save** to store edits in the current browser with `localStorage`.
 - Click **Export HTML** to download a standalone edited HTML file.
 - Click **Reset** to clear local saved edits and return to the committed template.
