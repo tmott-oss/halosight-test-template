@@ -11,6 +11,7 @@ This is a static prototype built from the public Halosight website scrape and th
 - `https://halosight.com/ai-context.json`
 - Production CSS bundle tokens from `https://halosight.com/assets/index-DfzKn3g7.css`
 - Slide 3 from `/Users/troymott/Downloads/2026 07 10 - Halosight Introduction - Trudell (1).pptx`
+- Slide 5 from `/Users/troymott/Downloads/2026 07 10 - Halosight Introduction - Trudell (1).pptx`
 - Slide 7 from `/Users/troymott/Downloads/2026 07 10 - Halosight Introduction - Trudell (1).pptx`
 
 ## What This Template Preserves

@@ -1137,6 +1137,95 @@ textarea {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.roi-proof-section {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(232, 93, 156, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(139, 146, 255, 0.18), transparent 30%),
+    linear-gradient(140deg, #171b27 0%, #242837 100%);
+}
+
+.proof-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.proof-metrics article,
+.proof-detail-grid article {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 44px rgba(10, 12, 20, 0.18);
+}
+
+.proof-metrics article {
+  min-height: 210px;
+  padding: 28px;
+}
+
+.proof-metrics strong {
+  display: block;
+  color: var(--brand-purple);
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 4.5vw, 4rem);
+  line-height: 1;
+}
+
+.proof-metrics h3,
+.proof-detail-grid h3 {
+  margin: 22px 0 10px;
+  color: var(--white);
+  font-size: 0.94rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-metrics p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-weight: 600;
+}
+
+.proof-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1240px;
+  margin: 22px auto 0;
+}
+
+.proof-detail-grid article {
+  padding: 30px;
+}
+
+.proof-detail-grid ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-detail-grid li {
+  position: relative;
+  padding-left: 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+}
+
+.proof-detail-grid li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--brand-coral);
+}
+
 .roi-section {
   background:
     radial-gradient(circle at 14% 18%, rgba(107, 157, 176, 0.12), transparent 28%),
@@ -1416,6 +1505,7 @@ textarea:focus {
   .problem-grid,
   .feature-grid,
   .pricing-grid,
+  .proof-metrics,
   .roi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1439,6 +1529,8 @@ textarea:focus {
   .problem-grid,
   .feature-grid,
   .pricing-grid,
+  .proof-metrics,
+  .proof-detail-grid,
   .roi-grid,
   .site-footer {
     grid-template-columns: 1fr;

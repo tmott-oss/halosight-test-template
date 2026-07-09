@@ -14,7 +14,7 @@ const editorExport = document.querySelector("[data-editor-export]");
 const editorReset = document.querySelector("[data-editor-reset]");
 const editorStatus = document.querySelector("[data-editor-status]");
 const imagePicker = document.querySelector("[data-image-picker]");
-const storageKey = "halosight-template-edits-v3";
+const storageKey = "halosight-template-edits-v4";
 
 let activeImageTarget = null;
 let editorActive = false;
