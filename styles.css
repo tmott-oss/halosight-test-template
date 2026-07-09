@@ -1153,7 +1153,7 @@ textarea {
 }
 
 .proof-metrics article,
-.proof-detail-grid article {
+.proof-quotes article {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.045);
@@ -1173,8 +1173,7 @@ textarea {
   line-height: 1;
 }
 
-.proof-metrics h3,
-.proof-detail-grid h3 {
+.proof-metrics h3 {
   margin: 22px 0 10px;
   color: var(--white);
   font-size: 0.94rem;
@@ -1188,42 +1187,52 @@ textarea {
   font-weight: 600;
 }
 
-.proof-detail-grid {
+.proof-quote-heading {
+  max-width: 1240px;
+  margin: 34px auto 14px;
+}
+
+.proof-quote-heading h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: 1.08rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-quotes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   max-width: 1240px;
-  margin: 22px auto 0;
+  margin: 0 auto;
 }
 
-.proof-detail-grid article {
-  padding: 30px;
-}
-
-.proof-detail-grid ul {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.proof-detail-grid li {
+.proof-quotes article {
   position: relative;
-  padding-left: 24px;
-  color: rgba(255, 255, 255, 0.72);
-  font-weight: 600;
+  min-height: 178px;
+  padding: 34px 30px 30px;
+  overflow: hidden;
 }
 
-.proof-detail-grid li::before {
-  content: "";
+.proof-quotes article::before {
+  content: "\201C";
   position: absolute;
-  left: 0;
-  top: 0.68em;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: var(--brand-coral);
+  top: -20px;
+  left: 22px;
+  color: rgba(232, 93, 156, 0.22);
+  font-family: Georgia, serif;
+  font-size: 7rem;
+  line-height: 1;
+}
+
+.proof-quotes p {
+  position: relative;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.03rem;
+  font-weight: 600;
+  line-height: 1.58;
 }
 
 .roi-section {
@@ -1545,6 +1554,7 @@ textarea:focus {
   .feature-grid,
   .pricing-grid,
   .proof-metrics,
+  .proof-quotes,
   .roi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1569,7 +1579,7 @@ textarea:focus {
   .feature-grid,
   .pricing-grid,
   .proof-metrics,
-  .proof-detail-grid,
+  .proof-quotes,
   .roi-grid,
   .site-footer {
     grid-template-columns: 1fr;
