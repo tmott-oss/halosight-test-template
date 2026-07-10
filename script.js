@@ -14,7 +14,7 @@ const editorExport = document.querySelector("[data-editor-export]");
 const editorReset = document.querySelector("[data-editor-reset]");
 const editorStatus = document.querySelector("[data-editor-status]");
 const imagePicker = document.querySelector("[data-image-picker]");
-const storageKey = "halosight-template-edits-v6";
+const storageKey = "halosight-template-edits-v8";
 
 let activeImageTarget = null;
 let editorActive = false;
@@ -39,6 +39,48 @@ const stepContent = {
     body: "The account team follows up quickly with the details, promises, and context that customers expect."
   }
 };
+
+const toPascalCase = (value) =>
+  value
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join("");
+
+const createLucideNode = ([tag, attrs = {}, children = []]) => {
+  const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
+  children.forEach((child) => node.appendChild(createLucideNode(child)));
+  return node;
+};
+
+const renderLocalLucideIcons = () => {
+  if (!window.lucide?.icons) return;
+
+  document.querySelectorAll("[data-lucide]").forEach((target) => {
+    if (target.querySelector("svg")) return;
+
+    const iconName = toPascalCase(target.dataset.lucide || "");
+    const icon = window.lucide.icons[iconName];
+    if (!icon) return;
+
+    const svg = createLucideNode(["svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }, icon]);
+
+    target.appendChild(svg);
+  });
+};
+
+renderLocalLucideIcons();
 
 const editableSelector = [
   "main h1",
