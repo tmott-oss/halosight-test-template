@@ -988,6 +988,57 @@ textarea {
   font-weight: 600;
 }
 
+.promo-expert-section {
+  background:
+    linear-gradient(180deg, rgba(245, 246, 255, 0.72), rgba(255, 255, 255, 0)),
+    var(--white);
+}
+
+.promo-expert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.promo-expert-grid article {
+  min-height: 250px;
+  padding: 28px;
+  border: 1px solid rgba(91, 99, 214, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 46px rgba(20, 25, 44, 0.08);
+}
+
+.promo-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.promo-expert-grid h3 {
+  margin: 24px 0 12px;
+  color: var(--dark-primary);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.promo-expert-grid p {
+  margin: 0;
+  color: var(--neutral-600);
+  font-size: 1.04rem;
+  font-weight: 600;
+}
+
 .feature-grid article {
   min-height: 285px;
   padding: 28px;
@@ -1552,6 +1603,7 @@ textarea:focus {
 
   .problem-grid,
   .feature-grid,
+  .promo-expert-grid,
   .pricing-grid,
   .proof-metrics,
   .proof-quotes,
@@ -1577,6 +1629,7 @@ textarea:focus {
   .metric-row,
   .problem-grid,
   .feature-grid,
+  .promo-expert-grid,
   .pricing-grid,
   .proof-metrics,
   .proof-quotes,
