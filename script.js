@@ -14,31 +14,12 @@ const editorExport = document.querySelector("[data-editor-export]");
 const editorReset = document.querySelector("[data-editor-reset]");
 const editorStatus = document.querySelector("[data-editor-status]");
 const imagePicker = document.querySelector("[data-image-picker]");
-const storageKey = "halosight-template-edits-v8";
+const storageKey = "halosight-template-edits-v9";
 
 let activeImageTarget = null;
 let editorActive = false;
 let customItemCounter = 0;
 let activeDrag = null;
-
-const stepContent = {
-  capture: {
-    title: "Capture Customer Interactions",
-    body: "Your rep opens the app, hits record, and focuses on the conversation instead of the keyboard."
-  },
-  extract: {
-    title: "We Do The Heavy Lifting",
-    body: "Halosight extracts commitments, objections, relationship details, and buying signals from the meeting."
-  },
-  sync: {
-    title: "CRM Gets Updated",
-    body: "Meeting summaries, contacts, follow-ups, and account fields are drafted for the right CRM records."
-  },
-  act: {
-    title: "You Look Like A Genius",
-    body: "The account team follows up quickly with the details, promises, and context that customers expect."
-  }
-};
 
 const toPascalCase = (value) =>
   value
@@ -573,20 +554,6 @@ navToggle?.addEventListener("click", () => {
 
 nav?.addEventListener("click", (event) => {
   if (event.target.matches("a")) closeNav();
-});
-
-document.querySelector("[data-steps]")?.addEventListener("click", (event) => {
-  if (editorActive) return;
-  const step = event.target.closest("[data-step]");
-  if (!step) return;
-
-  document.querySelectorAll("[data-step]").forEach((button) => button.classList.remove("is-active"));
-  step.classList.add("is-active");
-
-  const preview = document.querySelector("[data-step-preview]");
-  const content = stepContent[step.dataset.step];
-  preview.querySelector("h3").textContent = content.title;
-  preview.querySelector("p").textContent = content.body;
 });
 
 openModalButtons.forEach((button) => button.addEventListener("click", openModal));
