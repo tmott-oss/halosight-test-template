@@ -10,6 +10,7 @@ const editorToggle = document.querySelector("[data-editor-toggle]");
 const editorAddText = document.querySelector("[data-editor-add-text]");
 const editorAddImage = document.querySelector("[data-editor-add-image]");
 const editorSave = document.querySelector("[data-editor-save]");
+const editorSaveRepo = document.querySelector("[data-editor-save-repo]");
 const editorExport = document.querySelector("[data-editor-export]");
 const editorReset = document.querySelector("[data-editor-reset]");
 const editorStatus = document.querySelector("[data-editor-status]");
@@ -288,6 +289,30 @@ function cleanCloneForExport() {
   return `<!doctype html>\n${clone.outerHTML}`;
 }
 
+function cleanCloneForRepoSave() {
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelectorAll("[contenteditable]").forEach((element) => {
+    element.removeAttribute("contenteditable");
+    element.removeAttribute("spellcheck");
+    element.removeAttribute("aria-label");
+  });
+  clone.querySelectorAll(".editor-field").forEach((element) => {
+    element.classList.remove("editor-field");
+  });
+  clone.querySelectorAll(".custom-drag-handle").forEach((element) => {
+    element.remove();
+  });
+  clone.querySelectorAll("[data-lucide] svg").forEach((element) => {
+    element.remove();
+  });
+  clone.querySelectorAll("[data-custom-item]").forEach((element) => {
+    element.classList.remove("is-selected");
+  });
+  clone.querySelector("body")?.classList.remove("editor-active");
+  clone.querySelector("body")?.classList.remove("modal-open");
+  return `<!doctype html>\n${clone.outerHTML}`;
+}
+
 function exportHtml() {
   saveEdits(false);
   const blob = new Blob([cleanCloneForExport()], { type: "text/html" });
@@ -298,6 +323,31 @@ function exportHtml() {
   link.click();
   URL.revokeObjectURL(url);
   editorStatus.textContent = "Exported edited HTML";
+}
+
+async function saveRepoHtml() {
+  saveEdits(false);
+  editorStatus.textContent = "Saving to repo...";
+
+  try {
+    const response = await fetch("http://127.0.0.1:5175/save-to-repo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ html: cleanCloneForRepoSave() })
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(result.error || "Repo save failed.");
+    }
+
+    editorStatus.textContent = "Saved to repo index.html";
+  } catch (error) {
+    console.warn("Unable to save edited template to repo.", error);
+    editorStatus.textContent = "Start repo save server, then retry";
+  }
 }
 
 function updateImageFieldState(image) {
@@ -618,6 +668,7 @@ editorToggle?.addEventListener("click", () => {
 editorSave?.addEventListener("click", () => saveEdits());
 editorAddText?.addEventListener("click", () => addCustomItem("text"));
 editorAddImage?.addEventListener("click", () => addCustomItem("image"));
+editorSaveRepo?.addEventListener("click", saveRepoHtml);
 editorExport?.addEventListener("click", exportHtml);
 editorReset?.addEventListener("click", resetEdits);
 

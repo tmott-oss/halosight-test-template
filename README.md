@@ -34,6 +34,15 @@ Then visit `http://localhost:5174`.
 
 The template is self-contained for static hosting. The logo lives at `assets/halosight-color-logo.png`.
 
+To enable the editor's **Save to Repo** button, start the local save server in a second terminal:
+
+```bash
+cd "/Users/troymott/Documents/New project/halosight-test-template"
+npm run save-server
+```
+
+The save server listens on `http://127.0.0.1:5175` and writes approved editor output back to `index.html`.
+
 ## Editing The Template
 
 The page includes a lightweight browser-based editor:
@@ -45,10 +54,11 @@ The page includes a lightweight browser-based editor:
 - Click **Add Image** to place a draggable image field in the currently visible section.
 - Drag added objects by their **Move** handle while edit mode is on.
 - Click **Save** to store edits in the current browser with `localStorage`.
+- Click **Save to Repo** to write the edited page back to `index.html` when `npm run save-server` is running locally.
 - Click **Export HTML** to download a standalone edited HTML file.
 - Click **Reset** to clear local saved edits and return to the committed template.
 
-This editor is meant for fast website-copy and layout review, similar to editing slide fields. It does not publish changes back to GitHub automatically.
+This editor is meant for fast website-copy and layout review, similar to editing slide fields. **Save to Repo** updates the local repository file; commit and push afterward to publish those changes to GitHub Pages.
 
 ## Deploy With GitHub Pages
 
